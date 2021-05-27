@@ -1,11 +1,41 @@
+//All for teddy 
 //chargement de la premier photo de teddy
 let testdeTeddy = document.getElementById("img_de_teddy");
 testdeTeddy.innerHTML = "<img  src=\"http://localhost:3000/images/teddy_1.jpg\" class=\"card-img-top\" alt=\"...\">";
 
-//differente color de la peluche teddy
-let eltTeddy = document.getElementById("teddy_selector");
-eltTeddy.classList.add("div");
-eltTeddy.innerHTML = "<div><ul><li id=\"pale_brown_teddy\">Pale brown</li></li><li>Dark brown</li><li>White</li></ul></div>";
+//Condition et evenement pour les changement d'image de teddy au click
+let paleBrownTeddy = document.getElementById("pale_brown_teddy");
+let darkBrownTeddy = document.getElementById("dark_brown");
+let whiteColorTeddy = document.getElementById("white_color");
+let tanColorTeddy = document.getElementById("tan_color_teddy");
+
+paleBrownTeddy.onclick = function() {
+    if (paleBrownTeddy.onclick) {
+        let paleBrownTeddyColor = document.getElementById("img_de_teddy");
+        paleBrownTeddyColor.innerHTML = "<img  src=\"http://localhost:3000/images/teddy_2.jpg\" class=\"card-img-top\" alt=\"...\">";
+    }
+}
+
+darkBrownTeddy.onclick = function() {
+    if (darkBrownTeddy.onclick) {
+        let darkBrownTeddy = document.getElementById("img_de_teddy");
+        darkBrownTeddy.innerHTML = "<img  src=\"http://localhost:3000/images/teddy_3.jpg\" class=\"card-img-top\" alt=\"...\">";
+    }
+}
+
+whiteColorTeddy.onclick = function() {
+    if (whiteColorTeddy.onclick) {
+        let whiteColorTeddy = document.getElementById("img_de_teddy");
+        whiteColorTeddy.innerHTML = "<img  src=\"http://localhost:3000/images/teddy_4.jpg\" class=\"card-img-top\" alt=\"...\">";
+    }
+}
+
+tanColorTeddy.onclick = function() {
+    if (tanColorTeddy.onclick) {
+        let ts = document.getElementById("img_de_teddy");
+        ts.innerHTML = "<img  src=\"http://localhost:3000/images/teddy_1.jpg\" class=\"card-img-top\" alt=\"...\">"
+    }
+}
 
 //differente lentille camera
 
@@ -18,11 +48,3 @@ eltCamera.innerHTML = "<div><ul><li>50mm 1.8</li></ul></li><ul><li>60mm 2.8</li>
 let eltTable = document.getElementById("table_selector");
 eltTable.classList.add("div");
 eltTable.innerHTML = "<div><ul><li>Chocolate</li></ul></li><ul><li>Black</li></ul><ul><li>White</li></ul></div>";
-
-//changement de couleur du teddy
-const teddy_test = document.getElementById("pale_brown_teddy");
-//On detecte le click
-teddy_test.addEventListener("click", function() {
-    let replacementTeddy = document.getElementById("img_de_teddy");
-    replacementTeddy.innerHTML = "<img  src=\"http://localhost:3000/images/teddy_2.jpg\" class=\"card-img-top\" alt=\"...\">";
-});
