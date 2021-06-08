@@ -1,4 +1,7 @@
 //All for teddy 
+
+
+
 //chargement de la premier photo de teddy
 let testdeTeddy = document.getElementById("img_de_teddy");
 testdeTeddy.innerHTML = "<img  src=\"http://localhost:3000/images/teddy_1.jpg\" class=\"card-img-top\" alt=\"...\">";
@@ -127,3 +130,48 @@ darkOakMahoganyTable.onclick = function() {
         changedarkOakMahoganyImgTable.innerHTML = "<img src=\"http://localhost:3000/images/oak_5.jpg\" class=\"card-img-top\" alt=\"...\">";
     }
 }
+
+let clickbuttonteddy = document.getElementById("button_for_teddy");
+
+clickbuttonteddy.onclick = function() {
+    if (clickbuttonteddy.onclick) {
+        console.log("Hello world");
+        window.location.href = "produit.html";
+    }
+}
+
+fetch("http://localhost:3000/api/teddies")
+
+.then(function(res) {
+        if (res.ok) {
+            return res.json();
+        }
+    })
+    .then(function(value) {
+        console.log(value);
+        // console.log(value[2])
+
+
+        let $ArrayTeedy2 = value[0];
+        console.log($ArrayTeedy2);
+
+        class bankForTeddy {
+            constructor(name, price, imageUrl, description, colors, _id) {
+                this.name = name;
+                this.price = price;
+                this.imageUrl = imageUrl;
+                this.description = description;
+                this.colors = colors;
+                this._id = _id
+            }
+            SayTeddy() {
+                console.log("bonjour" + this.name + this.price + this.description + this.colors + this.imageUrl + this._id);
+            }
+        }
+        const newForTeddy = new bankForTeddy();
+        newForTeddy.SayTeddy();
+
+    })
+    .catch(function(err) {
+        // Une erreur est survenue
+    });
